@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>你的名字 · 個人履歷</title>
+  <meta name="description" content="一頁式個人履歷與作品集 Demo，適合掛在 GitHub Pages。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>你的名字</h1>
+      </div>
+      <nav class="navlinks">
+        <a href="#about">關於我</a>
+        <a href="#projects">專案</a>
+        <a href="#experience">經歷</a>
+        <a href="#contact">聯絡</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <span class="badge"><span class="badgedot"></span> 可任職 · 歡迎內推/合作</span>
+      <h2>你好，我是 <span class="grad">你的名字</span>，專長於 <u>後端 / 雲端 / 數據工程</u> 的軟體工程師。</h2>
+      <p>熟悉 FastAPI、Django、PostgreSQL、Kafka、Grafana、Kubernetes、GCP/AWS。熱衷把需求落地成可維護的產品，從 API 設計、資料流程到雲端部署都能獨立完成。</p>
+      <div class="stack">
+        <span class="chip">Python</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">Kafka</span>
+        <span class="chip">GCP · Cloud Run</span>
+        <span class="chip">Kubernetes</span>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="#projects">查看專案</a>
+        <a class="btn" href="resume.pdf" download>下載履歷 PDF</a>
+        <a class="btn" href="https://github.com/Aaron629" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-title"><h3>關於我</h3><div class="bar"></div></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h4>自我介紹</h4>
+          <p>我在聯華食品擔任大數據工程，負責資料流架構與內部平台開發。喜歡把複雜拆解成清晰的模組，並以文件與自動化維持品質。</p>
+        </div>
+        <div class="card">
+          <h4>我能帶來的價值</h4>
+          <ul class="list">
+            <li>端到端交付：需求 → 設計 → 開發 → CI/CD → 監控</li>
+            <li>資料流程治理：Schema、血緣、效能與成本控管</li>
+            <li>良好溝通與文字化：PR 範例、架構圖、運維手冊</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title"><h3>精選專案</h3><div class="bar"></div></div>
+      <div class="grid cols-3" id="projectGrid"></div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title"><h3>工作與里程碑</h3><div class="bar"></div></div>
+      <div class="card">
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title"><h3>聯絡我</h3><div class="bar"></div></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h4>開放合作</h4>
+          <p>歡迎就職缺、顧問或 side project 合作來信。</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:you@example.com?subject=%E5%90%88%E4%BD%9C%E8%AB%87%E8%A9%B1">Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/你的LinkedIn/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://medium.com/@你的Medium" target="_blank" rel="noopener">Medium</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>快速資訊</h4>
+          <p><strong>所在地：</strong>台北 · 可部分遠端</p>
+          <p><strong>語言：</strong>中文、英文（技術文件）</p>
+          <p><strong>可入職：</strong>2025-10 起可談</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container fwrap">
+      <small>© <span id="yy"></span> 你的名字 · All rights reserved.</small>
+      <div class="social">
+        <a class="btn" href="#home" id="backToTop">回到頂部 ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const profile = {
+      name: "你的名字",
+      title: "Software / Data / Cloud Engineer",
+      links: {
+        github: "https://github.com/你的GitHub",
+        linkedin: "https://www.linkedin.com/in/你的LinkedIn/"
+      },
+      projects: [
+        {
+          name: "FastAPI × GraphQL 身分驗證 API",
+          desc: "以 Strawberry GraphQL + JWE 驗證打造可擴充的查詢/寫入 API，附 CI/CD 與測試。",
+          cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
+          url: "https://github.com/你的GitHub/fastapi-graphql-demo",
+          tags: ["FastAPI","GraphQL","JWE","PyTest"]
+        },
+        {
+          name: "IoT 資料管線（Kafka → Spark → PostgreSQL）",
+          desc: "串接感測器資料流，實作即時處理與離線聚合，並以 Grafana 監控指標。",
+          cover: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+          url: "https://github.com/你的GitHub/iot-data-pipeline",
+          tags: ["Kafka","Spark","PostgreSQL","Grafana"]
+        },
+        {
+          name: "Cloud Run MLOps 最小實作",
+          desc: "以 GitHub Actions 自動訓練/部署 Iris 模型與 FastAPI 服務，版本標記與回滾。",
+          cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
+          url: "https://github.com/你的GitHub/mlops-cloudrun",
+          tags: ["GCP","Cloud Run","GitHub Actions"]
+        },
+        {
+          name: "K8s 監控觀測組合",
+          desc: "在 EKS 上以 Helm 佈署 Prometheus+Grafana+ELK，建立全端可觀測性儀表板。",
+          cover: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1600&auto=format&fit=crop",
+          url: "https://github.com/你的GitHub/observability-stack",
+          tags: ["Kubernetes","Helm","Prometheus","ELK"]
+        },
+        {
+          name: "職涯資料分析系統",
+          desc: "以 FastAPI+React 打造職涯資料庫，支援查詢、圖表、匯出，附 ERD 與種子資料。",
+          cover: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
+          url: "https://github.com/你的GitHub/career-analytics",
+          tags: ["FastAPI","React","SQLModel"]
+        },
+      ],
+      timeline: [
+        { title: "大數據工程師 · 聯華食品", time: "2025/05 - 至今", desc: "建立資料流架構、IoT 數據整合，推動內部平台自動化。" },
+        { title: "系統開發工程師 · 和瑩電腦", time: "2024/xx - 2025/05", desc: "Django API、報表查詢、統計圖表與前端模板。" },
+        { title: "軟體工程師 · 國眾電腦", time: "2023/xx - 2024/xx", desc: "測試與系統維護，導入基本 CI。" },
+        { title: "學歷 · 雲林科技大學資管系", time: "—", desc: "資料庫、系統分析、雲端基礎。" },
+      ]
+    };
+
+    document.querySelector('title').textContent = `${profile.name} · 個人履歷`;
+    document.querySelector('h1').textContent = profile.name;
+
+    const grid = document.getElementById('projectGrid');
+    profile.projects.forEach(p => {
+      const card = document.createElement('a');
+      card.className = 'card';
+      card.href = p.url; card.target = '_blank'; card.rel='noopener';
+      const cover = document.createElement('div');
+      cover.className = 'project-cover';
+      cover.style.backgroundImage = `url(${p.cover})`;
+      const title = document.createElement('h4'); title.textContent = p.name;
+      const desc = document.createElement('p'); desc.textContent = p.desc;
+      const tags = document.createElement('div'); tags.className = 'tags';
+      (p.tags||[]).forEach(t=>{ const s=document.createElement('span'); s.className='tag'; s.textContent=t; tags.appendChild(s); });
+      card.append(cover,title,desc,tags);
+      grid.appendChild(card);
+    });
+
+    const tl = document.getElementById('timeline');
+    profile.timeline.forEach(item=>{
+      const it = document.createElement('div'); it.className='titem';
+      it.innerHTML = `<h5>${item.title}</h5><span>${item.time}</span><p class="muted">${item.desc}</p>`;
+      tl.appendChild(it);
+    });
+
+    document.getElementById('yy').textContent = new Date().getFullYear();
+    document.getElementById('backToTop').addEventListener('click', e=>{ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); })
+  </script>
+</body>
+</html>
